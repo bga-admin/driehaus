@@ -20,15 +20,24 @@
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
 
         <script>
+
+
             $(function () {
+
     $(window).on('scroll', function () {
         if ( $(window).scrollTop() > 10 ) {
             $('.navbar').addClass('active');
+            document.getElementById("logo").src = "image2.png";
         } else {
             $('.navbar').removeClass('active');
+            document.getElementById("logo").src = "logo-white.png";
         }
     });
+
 });
+
+
+
 
         </script>
        <style>   /*
@@ -105,10 +114,14 @@
             .myButtonBlack:hover {
                 background-color:#000000;
                 text-decoration:none;
+                color: white;
+                background-color:#3f3d3d;
+
             }
             .myButtonBlack:active {
                 position:relative;
                 top:1px;
+
             }
 
             .myButtonWhite {
@@ -163,6 +176,13 @@
             .contentHeader{
                 letter-spacing: 4px;
                 font-family: 'Cormorant Garamond', serif;
+                margin-bottom: 17px;
+
+                
+            }
+
+            .contentHeader span{
+                border-bottom: solid black;
             }
             .aBorder{
                 border-bottom: solid white;
@@ -178,7 +198,20 @@
             }
 
             p{
-                font-size: larger;
+                font-size: 150%;
+            }
+
+            .lineHeight{
+                line-height: 54px;
+            }
+
+            .sections{
+                        display: block; 
+                        content: " "; 
+                        margin-top: -285px; 
+                        height: 285px; 
+                        visibility: hidden; 
+                        pointer-events: none;
             }
 
 
@@ -222,8 +255,10 @@
 
 <!-- Navbar-->
 <header class="header">
-    <nav class="navbar navbar-expand-lg fixed-top py-3">
-        <a href="#" class="navbar-brand text-uppercase font-weight-bold justify-content-start"><img style="width: 90px;" src="logo-white.png"></a>
+    <nav class="navbar navbar-expand-lg fixed-top py-0">
+        <a href="https://www.bettergov.org/" class="navbar-brand text-uppercase font-weight-bold justify-content-start"><img id="logo" style="width: 90px;" src="logo-white.png"></a>
+        <a href="http://www.driehausfoundation.org/" class="navbar-brand text-uppercase font-weight-bold justify-content-start"><img id="logo2" style="width: 192px;" src="driehaus.svg"></a>
+
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
             
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
@@ -246,7 +281,7 @@
           A Remedy For Wrong
         </h1>
 
-        <a href="#" class="myButtonWhite">LEARN MORE</a>
+        <a href="#registration" class="myButtonWhite">LEARN MORE</a>
 
 
       </div>
@@ -255,33 +290,33 @@
 </div>
 
 <div class="container" style="background-color: #f4f4f4" >
-    <div class>
+    <div class id="registration">
         <div class="py-5 mt-5 text-center">
-            <h2 class="" style="letter-spacing: 7px;">Registration ends. </h1>
+            <h2 class="" style="letter-spacing: 7px;">Registration ends </h1>
             <h2 class="" style="letter-spacing: 7px;"> on March 12th. </h1>
             <hr/>
             <a href="#" class="myButtonRed">APPLY NOW</a>
         </div>
         <div class="py-5 mt-5 text-center" >
-            <h1 class="contentHeader" style="font-weight:bold" id="prizes">PRIZES</h1>
+            <h1 class="contentHeader " style="font-weight:bold" id="prizes"><span>PRIZES</span></h1>
             <div class="prize" style="font-size:150% ; letter-spacing: 3px;">1st Place - $15,000</div>
             <div class="prize" style="font-size:150% ; letter-spacing: 3px;">2nd Place - $7,000</div>
             <div class="prize" style="font-size:150% ; letter-spacing: 3px;">3rd Place - $4,000</div>
 
         </div>
-        <div class="py-5 mt-5 text-center" id="deadline">
-            <h1 class="contentHeader" style="font-weight:bold">DEADLINE</h1>
-            <p>Entries must be submitted by Thursday, March 12th, 2020 — midnight into Friday. The 2020 Richard H. Driehaus Foundation Awards for Investigative Reporting are presented with the generous support of The Richard H. Driehaus Foundation. The Driehaus Foundation supports investigative reporting that fosters greater transparency, accountability, and effectiveness in government institutions at the local level.
+        <div class="py-5 mt-5 text-center " id="deadline">
+            <h1 class="contentHeader " style="font-weight:bold"><span>DEADLINE</span></h1>
+            <p class="lineHeight">Entries must be submitted by Thursday, March 15th, 2021 — midnight into Friday. The 2021 Richard H. Driehaus Foundation Awards for Investigative Reporting are presented with the generous support of The Richard H. Driehaus Foundation. The Driehaus Foundation supports investigative reporting that fosters greater transparency, accountability, and effectiveness in government institutions at the local level.
 
             </p>
 
         </div>
         <div class="py-5 mt-5 text-center" id="about">
-            <h1 class="contentHeader" style="font-weight:bold">ABOUT</h1>
-            <p>
+            <h1 class="contentHeader " style="font-weight:bold"><span>ABOUT</span></h1>
+            <p class="lineHeight">
                 The Better Government Association will present the Richard H. Driehaus Foundation Awards for Investigative Reporting in a virtual video ceremony at 4:30 p.m. Tuesday, July 14.
             </p>
-            <p>
+            <p class="lineHeight">
                Judged by a rotating panel of journalists and media educators, the awards highlight the impact of Illinois investigative reporting as a reform tool within the context of state and local government waste, fraud and corruption.
             </p>
 
