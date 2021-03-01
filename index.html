@@ -25,21 +25,44 @@
 
 <link rel="stylesheet" href="https://use.typekit.net/juf0zjw.css">
         <script>
+$(document).ready(function() {
+    // Optimalisation: Store the references outside the event handler:
+    var $window = $(window);
+    var $pane = $('#pane1');
 
-
-            $(function () {
-
-    $(window).on('scroll', function () {
-        if ( $(window).scrollTop() > 10 ) {
-            $('.navbar').addClass('active');
+    function checkWidth() {
+        var windowsize = $window.width();
+        if (windowsize < 769) {
+            //if the window is greater than 440px wide then turn on jScrollPane..
             document.getElementById("logo").src = "image2.png";
-        } else {
-            $('.navbar').removeClass('active');
-            document.getElementById("logo").src = "logo-white.png";
+
         }
-    });
+    }
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
+
+    $(function () {
+
+$(window).on('scroll', function () {
+    if ( $(window).scrollTop() > 10  ) {
+        $('.navbar').addClass('active');
+        document.getElementById("logo").src = "image2.png";
+    } else {
+        $('.navbar').removeClass('active');
+        document.getElementById("logo").src = "logo-white.png";
+        checkWidth();
+
+    }
+});
 
 });
+});
+
+
+
+
 
 
 
@@ -115,7 +138,7 @@
                 font-size:17px;
                 font-weight:bold;
                 padding:11px 24px;
-                margin-left: 15px;
+                /* margin-left: 15px; */
                 text-decoration:none;
             }
             .myButtonBlack:hover {
@@ -156,8 +179,7 @@
                 top:1px;
             }
             .myButtonRed {
-                background-color:#ff0404;
-                border:2px solid #1a1a1a;
+                background-color:#1D9E5D;
                 display:inline-block;
                 cursor:pointer;
                 color:#ffffff;
@@ -169,7 +191,7 @@
                 text-decoration:none;
             }
             .myButtonRed:hover {
-                background-color:#f24437;
+                background-color:#70a88c;
                 text-decoration:none;
                 color:#ffffff;
 
@@ -238,11 +260,11 @@
 
             .aRemForWrong{
               color: #000000;
-              font-size: 60px;
+              font-size: 77px;
               margin-bottom: 0rem;
             }
             .driehausAwards{
-              font-size: 33px;
+              font-size: 40px;
               margin-bottom: 0rem;
             }
 
@@ -443,7 +465,7 @@
 
             
         
-.view,body,html{height:100%}.navbar{background-color:rgba(200,200,200,0.3)}.page-footer,.top-nav-collapse{background-color:#1C2331}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
+.view,body,html{height:100%}.navbar{background-color:rgba(200,200,200,0.3)}.page-footer,.top-nav-collapse{background-color:#ffffff}@media only screen and (max-width:768px){.navbar{background-color:#ffffff} .bgaLogo{ background-image: url("") !important;} }
 </style>
     </head>
     <body style="background-color: #ffffff">
@@ -454,22 +476,23 @@
 <!-- Navbar-->
 <header class="header">
     <nav class="navbar navbar-expand-lg fixed-top py-0">
-        <a href="https://www.bettergov.org/" class="navbar-brand text-uppercase font-weight-bold justify-content-start"><img id="logo" style="width: 90px;" src="logo-white.png"></a>
+        <a href="https://www.bettergov.org/" class="navbar-brand text-uppercase font-weight-bold justify-content-start"><img id="logo" class="bgaLogo" style="width: 90px;" src="logo-white.png"></a>
         <a href="http://www.driehausfoundation.org/" class="navbar-brand text-uppercase font-weight-bold justify-content-start"><img id="logo2" style="width: 192px;" src="driehaus.svg"></a>
 
-            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
           
             </div>
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto mr-3">
+                  <li class="nav-item  aBorder"><a href="#about" class="nav-link text-uppercase font-weight-bold">About</a></li>
                     <li class="nav-item active aBorder"><a href="#prizes" class="nav-link text-uppercase font-weight-bold">Prizes</a></li>
                     <li class="nav-item aBorder"><a href="#deadline" class="nav-link text-uppercase font-weight-bold">Deadline</a></li>
-                    <li class="nav-item  aBorder"><a href="#about" class="nav-link text-uppercase font-weight-bold">About</a></li>
                 </ul>
             </div>
             <a href="form.html" class="myButtonBlack">Submit Your Entry</a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+
     </nav>
 
 
@@ -550,7 +573,7 @@
             </div>
             <div class="col-lg-6">
               <div class="welcome_img">
-              <img class="img-fluid " src="1st.png" alt="">
+              <img class="img-fluid " src="places.png" alt="">
               </div>
               </div>
             </div>
@@ -614,4 +637,4 @@
     </div>
 </footer>
     </body>
-</html>
+</html>.
